@@ -2,26 +2,33 @@
 
 ## Overview of the Analysis
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
-
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any other algorithms).
+The purpose of  this analysis was to create and train a model that predicts the creditworthiness of borrowers based on a dataset of lending activity from a peer-to-peer lending company, then evaluate the accuracy of the model. The data used included variables such as loan size, interest rate, borrower income, debt-to-income ratio, number of accounts, derogatory marks, and total debt. The target variable, loan_status, indicates whether a loan is healthy (0) or high-risk (1). The machine learning process included the following stages:
+* Data preprocessing: Splitting the data into features (x) and labels (y), and further splitting into training and testing sets.
+* Model creation: A Logistic Regression model was used to fit the training data and make predictions using the testing data.
+* Model evaluation: The model was evaluated using a confusion matrix and printing a classification report
 
 ## Results
 
-Using bulleted lists, describe the accuracy scores and the precision and recall scores of all machine learning models.
+Logistic Regression Model:
+* Accuracy: 99%
+* Precision:
+    * Healthy loans (0): 100%
+    * High-risk loans (1): 84%
+* Recall:
+    * Healthy loans (0): 99%
+    * High-risk loans (1): 94%
+* F1-Score:
+    * Healthy loans (0): 100%
+    * High-risk loans (1): 89%
 
-* Machine Learning Model 1:
-    * Description of Model 1 Accuracy, Precision, and Recall scores.
+The confusion matrix showed:
+* True Positives (TP): 583 
+* True Negatives (TN): 18,655
+* False Positives (FP): 110
+* False Negatives (FN): 36
 
 ## Summary
-
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
-
-If you do not recommend any of the models, please justify your reasoning.
+The Logistic Regression model performed well, achieving a 99% accuracy rate in predicting loan status. Key observations include:
+Healthy loans (0) were predicted with near-perfect precision and recall.
+High-risk loans (1) had slightly lower precision (84%) but very high recall (94%), indicating the model effectively identifies most high-risk loans.
+In this case, the Logistic Regression model can be recommended because it was high performing in its prediticons but could be a little risky considering it having lower precision in the classification of high-risk loans. 
